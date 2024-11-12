@@ -164,10 +164,12 @@ const styles = {
     padding: "8px 24px",
     border: "1px solid #000",
     borderRadius: "4px",
-    backgroundColor: "white",
+    backgroundColor: "#217e38",
     cursor: "pointer",
     fontSize: "16px",
     transition: "background-color 0.2s",
+    color: "white",
+    fontWeight: "bold",
   },
   chartContainer: {
     backgroundColor: "#f9f9f9",
@@ -1121,14 +1123,43 @@ export const CarbonCalc: React.FC = () => {
                 </table>
               </div>
 
-              <div style={styles.buttonContainer}>
+              <div
+                style={{
+                  ...styles.buttonContainer,
+                  display: "flex",
+                  flexDirection: "row",
+                  justifyContent: "center",
+                  gap: "16px",
+                  flexWrap: "wrap",
+                }}
+              >
                 <button
                   onClick={() => window.print()}
                   style={styles.button}
                   className="save-results-button"
                 >
-                  Save Results
+                  💾 Save Results
                 </button>
+
+                <a
+                  href="https://www.forevergreen.earth"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={styles.button}
+                  className="save-results-button"
+                >
+                  🌱 Explore Solutions
+                </a>
+
+                <a
+                  href="https://www.forevergreen.earth/carboncredits"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={styles.button}
+                  className="save-results-button"
+                >
+                  🌎 Offset Impact
+                </a>
               </div>
             </div>
           </div>
