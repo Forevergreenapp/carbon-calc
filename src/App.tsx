@@ -18,11 +18,11 @@ const FloatingCounter = ({ emissions }: { emissions: number }) => {
 
   const style = {
     position: "fixed" as const,
-    top: isMobile ? "10px" : "150px", // Align with "Basic Information"
-    right: isMobile ? "10px" : "calc(50% - 430px)", // Added 30px more space from the container edge
+    top: isMobile ? "20px" : "150px", // Increased from 10px to 20px for mobile
+    right: isMobile ? "10px" : "calc(50% - 430px)",
     backgroundColor: "#217e38",
     color: "white",
-    padding: "15px",
+    padding: isMobile ? "12px 15px" : "15px", // Added slightly more padding on mobile
     borderRadius: "8px",
     boxShadow: "0 2px 10px rgba(0, 0, 0, 0.2)",
     zIndex: 1000,
@@ -31,6 +31,7 @@ const FloatingCounter = ({ emissions }: { emissions: number }) => {
     minWidth: "120px",
     transition: "all 0.3s ease",
     marginRight: isMobile ? "0" : "-20px",
+    marginTop: isMobile ? "env(safe-area-inset-top)" : "0", // Added to account for notches/status bars
   };
 
   return (
